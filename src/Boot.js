@@ -18,12 +18,13 @@ WorldGrammar.Boot.prototype = {
 
     //if (this.game.device.desktop)
       //  {
-        	console.log("navegador");
-            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-            this.scale.minWidth = gameWidth/2;
-            this.scale.minHeight = gameHeight/2;
-            this.scale.maxWidth = gameWidth;
-            this.scale.maxHeight = gameHeight;
+            //console.log("navegador");
+            this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+            //EXACT_FIT, SHOW_ALL
+            //this.scale.minWidth = gameWidth/2;
+            //this.scale.minHeight = gameHeight/2;
+            //this.scale.maxWidth = gameWidth;
+            //this.scale.maxHeight = gameHeight;
             this.scale.pageAlignHorizontally = true;
             this.scale.pageAlignVertically = true;
             this.scale.setScreenSize(true);
