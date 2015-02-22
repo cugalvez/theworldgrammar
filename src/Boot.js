@@ -12,8 +12,20 @@ WorldGrammar.Boot.prototype = {
   create: function() {
   	//loading screen will have a white background
     //this.game.stage.backgroundColor = '#C1C4B9';
-    var gameWidth = 800;
-    var gameHeight = 480;
+    var gameWidth = 1024;
+    var gameHeight = 720;
+
+
+     console.log("sd");
+      this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            this.scale.minWidth = gameWidth/2;
+            this.scale.minHeight = gameHeight/2;
+            this.scale.maxWidth = gameWidth;
+            this.scale.maxHeight = gameHeight;
+            this.scale.pageAlignHorizontally = true;
+            this.scale.pageAlignVertically = true;
+            this.scale.setScreenSize(true);
+        
 
         //this.game.input.maxPointers = 1;
         //this.game.stage.scaleMode = Phaser.StageScaleMode.SHOW_ALL;
@@ -21,7 +33,8 @@ WorldGrammar.Boot.prototype = {
         //this.game.stage.scale.pageAlignVertically = true;
         //this.game.stage.scale.setScreenSize(true);
         //this.game.state.start('Preloader');
-
+            
+           /* 
         if (this.game.device.desktop)
         {
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
