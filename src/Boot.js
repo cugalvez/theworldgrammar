@@ -13,11 +13,11 @@ WorldGrammar.Boot.prototype = {
   	//loading screen will have a white background
     this.game.stage.backgroundColor = '#C1C4B9';
     var gameWidth = 800;
-	var gameHeight = 540;
+    var gameHeight = 540;
 
 
-    if (this.game.device.desktop)
-        {
+    //if (this.game.device.desktop)
+      //  {
         	console.log("navegador");
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             this.scale.minWidth = gameWidth/2;
@@ -27,9 +27,9 @@ WorldGrammar.Boot.prototype = {
             this.scale.pageAlignHorizontally = true;
             this.scale.pageAlignVertically = true;
             this.scale.setScreenSize(true);
-        }
-        else
-        {
+        //}
+       // else
+        /*{
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             this.scale.minWidth = gameWidth/2;
             this.scale.minHeight = gameHeight/2;
@@ -42,7 +42,7 @@ WorldGrammar.Boot.prototype = {
             this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
             this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
             this.scale.setScreenSize(true);
-        }
+        }*/
 
 
 /*
