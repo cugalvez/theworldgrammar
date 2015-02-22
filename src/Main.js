@@ -1,10 +1,10 @@
 var WorldGrammar = WorldGrammar || {};
 
-var gameWidth = 1280;
-var gameHeight = 720;
+var gameWidth = 800;
+var gameHeight = 480;
 
-var h = window.innerWidth;
-var w = window.innerHeight;
+//var h = window.innerWidth;
+//var w = window.innerHeight;
 
 //WorldGrammar.game = new Phaser.Game((h > w) ? h : w, (h > w) ? w : h, Phaser.AUTO, 'gameContainer');
 //WorldGrammar.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, '');

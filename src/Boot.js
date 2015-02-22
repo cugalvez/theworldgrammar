@@ -11,26 +11,30 @@ WorldGrammar.Boot.prototype = {
   },
   create: function() {
   	//loading screen will have a white background
-    this.game.stage.backgroundColor = '#C1C4B9';
+    //this.game.stage.backgroundColor = '#C1C4B9';
     var gameWidth = 800;
-    var gameHeight = 540;
+    var gameHeight = 480;
 
+        //this.game.input.maxPointers = 1;
+        //this.game.stage.scaleMode = Phaser.StageScaleMode.SHOW_ALL;
+        //this.game.stage.scale.pageAlignHorizontally = true;
+        //this.game.stage.scale.pageAlignVertically = true;
+        //this.game.stage.scale.setScreenSize(true);
+        //this.game.state.start('Preloader');
 
-    //if (this.game.device.desktop)
-      //  {
-            //console.log("navegador");
+        if (this.game.device.desktop)
+        {
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-            //EXACT_FIT, SHOW_ALL
-            //this.scale.minWidth = gameWidth/2;
-            //this.scale.minHeight = gameHeight/2;
-            //this.scale.maxWidth = gameWidth;
-            //this.scale.maxHeight = gameHeight;
+            this.scale.minWidth = gameWidth/2;
+            this.scale.minHeight = gameHeight/2;
+            this.scale.maxWidth = gameWidth;
+            this.scale.maxHeight = gameHeight;
             this.scale.pageAlignHorizontally = true;
             this.scale.pageAlignVertically = true;
             this.scale.setScreenSize(true);
-        //}
-       // else
-        /*{
+        }
+        else
+        {
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             this.scale.minWidth = gameWidth/2;
             this.scale.minHeight = gameHeight/2;
@@ -43,7 +47,25 @@ WorldGrammar.Boot.prototype = {
             this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
             this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
             this.scale.setScreenSize(true);
-        }*/
+        }
+
+        var ow = parseInt(this.game.canvas.style.width,10);
+        var oh = parseInt(this.game.canvas.style.height,10);
+        var r = Math.max(window.innerWidth/ow,window.innerHeight/oh);
+        var nw = ow*r;
+        var nh = oh*r;
+        this.game.canvas.style.width = nw+"px";
+        this.game.canvas.style.height= nh+"px";
+        this.game.canvas.style.marginLeft = (window.innerWidth/2 - nw/2)+"px"; 
+        this.game.canvas.style.marginTop = (window.innerHeight/2 - nh/2)+"px";
+
+        document.getElementsByTagName("canvas")[0].setAttribute("id", "game");;
+        //can.setAttributes("id") = "game";
+
+
+        document.getElementById("game").style.width = window.innerWidth+"px";
+        document.getElementById("game").style.height = window.innerHeight-1+"px";//The css for body includes 1px top margin, I believe this is the cause for this -1
+        document.getElementById("game").style.overflow = "hidden";
 
 
 /*

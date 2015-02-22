@@ -85,7 +85,7 @@ WorldGrammar.Game.prototype = {
     ground.body.immovable = true;
  
     //  Now let's create two ledges
-    var ledge = platform.create(400, 500, "piso");
+    var ledge = platform.create(400, 550, "piso");
     ledge.body.immovable = true;
  
     ledge = platform.create(-150, 400, "piso");
