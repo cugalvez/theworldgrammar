@@ -19,7 +19,7 @@ WorldGrammar.Boot.prototype = {
     //if (this.game.device.desktop)
       //  {
             //console.log("navegador");
-            this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             //EXACT_FIT, SHOW_ALL
             //this.scale.minWidth = gameWidth/2;
             //this.scale.minHeight = gameHeight/2;
@@ -63,5 +63,16 @@ WorldGrammar.Boot.prototype = {
 	this.game.physics.startSystem(Phaser.Physics.ARCADE);
     
     this.state.start('Preload');
+  },
+   render:function () {
+    //this.game.debug.soundInfo(sonido, 20, 32);
+    
+    this.game.debug.text('Navigator: ' + navigator.userAgent, 32, 32);
+    this.game.debug.text('iOS: ' + this.game.device.iOS, 32, 64);
+    this.game.debug.text('Android: ' + this.game.device.android, 32, 128)
+    this.game.debug.text('Mobile Safari: ' + this.game.device.mobileSafari, 32, 160);
+    this.game.debug.text('WebApp: ' + this.game.device.webApp, 32, 192);
+    this.game.debug.text('nav: ' + navigator['standalone'], 32, 192+32);
+
   }
 };
